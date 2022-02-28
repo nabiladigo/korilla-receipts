@@ -7,15 +7,15 @@ const Form = (props) =>{
     const handleChange =(e) =>{
         setForm({...form, [e.target.name]: e.target.value});
     };
-    const handleSubmit =(e) =>{
+    const handleSearch = (e) => {
         e.preventDefault();
-        props.receiptsearch(form.search);
-    };
+        search(form);
+      };
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSearch}>
                 <input type="text" name = "search" onChange={handleChange} value={form.search} />
-                <input type= "submit" value = "submit"/>
+                <input type= "submit" value = "Search"/>
             </form>
         </div>
     );       
